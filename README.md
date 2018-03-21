@@ -3,7 +3,7 @@
 ##### Smallest damn carousel Bodybuilding.com has ever seen.
 <br />
 
-### Features
+## Features
 
 * Slides Per Click
 * Variable Cells Per Slide
@@ -17,7 +17,7 @@
 
 <br />
 
-### Usage
+## Usage
 **1. Add script and css tags as high on the page as you are able**
 
 ```javascript
@@ -46,10 +46,10 @@ exampleCarousel.initialize();
 
 <br />
 
-### Options
+## Options
 
 
-#### Initialization Options
+### Initialization Options
 
 Options | Default | Description
 ------------ | ------------- | -------------
@@ -66,7 +66,7 @@ mobilePadding: | 5 | Padding for each cell on Mobile, left and right.
 slidesPerClick: | 5 | How many slides should carousel move per click on nav buttons?
 transitionSpeed: | 300 | How fast should the slides be? In Milliseconds.
 
-#### After Initialization Options
+### After Initialization Options
 
 Options | Option | Description
 ------------ | ------------- | -------------
@@ -75,7 +75,7 @@ Future | | In the Future I'll be adding a rebuild options and better mobile opti
 
 <br />
 
-### Other Considerations
+## Other Considerations
 - Carousel works best at a set width that stays the same until breakpoint for mobile is reached.
   - This shouldn't be a huge issue as no customers ever resize thier browser, but it will be addressed none-the-less in the near future.
 - CSS contains markup to change native targeters on the site, no need to do it first.
