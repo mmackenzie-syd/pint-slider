@@ -37,8 +37,8 @@
 **3. Create and Initialize New Carousel**
 
 ```javascript
-exampleCarousel = new Carousel({
-    appendTo : ".js-top-selling-carousel",
+var exampleCarousel = new Carousel({
+    appendTo : ".js-carousel-append",
     mobileAt: 900
 });
 exampleCarousel.initialize();
