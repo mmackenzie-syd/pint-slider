@@ -1,8 +1,7 @@
 # Pint Slider
 
 ##### Smallest damn carousel Bodybuilding.com has ever seen.
----
-
+<br />
 
 ### Features
 
@@ -16,6 +15,7 @@
 * Variable Padding Of Cells
 * Customize Classes Of Container And Cells
 
+<br />
 
 ### Usage
 **1. Add script and css tags as high on the page as you are able**
@@ -44,6 +44,8 @@ exampleCarousel = new Carousel({
 exampleCarousel.initialize();
 ```
 
+<br />
+
 ### Options
 
 
@@ -71,6 +73,7 @@ Options | Option | Description
 Destroy | exampleCarousel.destroy(); | Destroys built elements and all cells within it; good for carousels like the Store Index.
 Future | | In the Future I'll be adding a rebuild options and better mobile options. 
 
+<br />
 
 ### Other Considerations
 - Carousel works best at a set width that stays the same until breakpoint for mobile is reached.
