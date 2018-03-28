@@ -81,5 +81,5 @@ Future | | In the Future I'll be adding rebuild options and more robust mobile o
 <br />
 
 ## Other Considerations
-**- CSS contains markup to change native targeters on the site, no need to do it first.**
-**- Don't set the width of the cells within the carousel (automatically done)**
+* **- CSS contains markup to change native targeters on the site, no need to do it first.**
+* **- Don't set the width of the cells within the carousel (automatically done)**
