@@ -1,0 +1,109 @@
+.ps__carousel__outer, .ps__carousel__outer * {
+    box-sizing: border-box;
+}
+.ps__carousel__outer {
+    font: 300 14px/14px Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #333;
+}
+.ps__carousel__container {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  width: 100%;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  -webkit-overflow-scrolling: touch;
+}
+/*CAROUSEL NEEDED CSS*/
+.ps__carousel__outer {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    opacity: 1;
+    -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+}
+.ps__carousel__inner {
+    width: calc(100% - 60px);
+    min-width: calc(100% - 60px);
+    height: auto;
+    padding: 20px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow: hidden;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+    -webkit-overflow-scrolling: touch;
+}
+.ps__carousel__mobile__touch .ps__carousel__inner {
+    overflow-x: scroll;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0 0;
+    -webkit-overflow-scrolling: touch;
+}
+.ps__carousel__arrow {
+    width: 30px;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    z-index: 10;
+}
+.ps__carousel__mobile__touch .ps__carousel__arrow {
+    display: none;
+}
+.ps__carousel__left__arrow {
+    left: 0;
+    background-image: url('https://www.bodybuilding.com/images/lpimages/optimization/prev.png');
+}
+.ps__carousel__right__arrow {
+    right: 0;
+    background-image: url('https://www.bodybuilding.com/images/lpimages/optimization/next.png');
+}
+.ps__carousel-fade {
+    opacity: 0 !important;
+}
+/*END PINT SLIDER CSS*/
