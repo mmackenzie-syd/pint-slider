@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <title>Pint-Slider Example</title>
+    
+    <link id="wrapperStyles" rel="stylesheet" href="https://artifacts.bbcomcdn.com/bb-ui/18.5.0/bb-wrapper.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="//artifacts.bbcomcdn.com/marketing-app/5.0.0/marketing-ui-core.min.css">
+<!--CSS-->
+    <link rel="stylesheet" href="css/pint-slider.min.css">
+    <script src="js/pint-slider.min.js"></script>
+</head>
+<body>
+
+<style>
+    .marketing__Carousel {
+        max-width: 1100px;
+        margin: 40px auto;
+    }
+    .marketing__example__product {
+        background: grey;
+        color: white;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        text-align: center
+    }
+    .marketing__example__product:nth-of-type(2n + 1) {
+        background: lightgrey;
+    }
+    .marketing__example__product:nth-of-type(2n + 6) {
+        background: lightblue;
+    }
+</style>
+
+
+
+<div class="marketing__Carousel">
+    <div class="js__carousel__append">
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+    </div>
+</div>
+<div class="marketing__Carousel">
+    <div class="js__carousel__append2">
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+        <div class="marketing__example__product">
+            PRODUCT
+        </div>
+    </div>
+</div>  
+
+<script>
+exampleInitialize = new Carousel({
+    appendTo : ".js__carousel__append",
+    cellClass: ".marketing__example__product",
+    mobileAt: "900px",
+    dots: true,
+    dotsColor: "green"
+});
+exampleInitialize2 = new Carousel({
+    appendTo : ".js__carousel__append2",
+    cellClass: ".marketing__example__product",
+    cellsToShow: 5,
+    slidesPerClick: 5,
+    mobileAt: "900px",
+    dots: true,
+    dotsColor: "green"
+});
+</script>
+
+
+
+
+</body>
+</html>
