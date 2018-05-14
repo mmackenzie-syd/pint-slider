@@ -18,6 +18,7 @@
 * Auto Cell Width
 * Choose When To Switch To Mobile Version
 * Variable Speed Of Slide Movement
+* Images can be constrained in size (Supplements usually) or can expand to fill whole image container
 
 
 <br />
@@ -65,6 +66,7 @@ cellsToShow: | 5 | How many cells should show per slide?
 desktopPadding: | 15 | Padding for each cell on Desktop, left and right.  **Feature Coming Soon**
 dots: | false | Should carousel have dots on bottom for nav?
 fadeIn: | true | Should carousel Fade In?
+images: | "restrict" | Can be set to "loose" in order for product image to fill whole image container, other wise image is restricted in height and width (restricted for use with supplement bottles)
 mobile: | "touch" | In future will add option here to have arrows instead of "touch", doesn't need to be set now. **Feature Coming Soon**
 mobileAt: | "1000px" | Where should carousel switch to swipe friendly carousel?
 mobilePadding: | 5 | Padding for each cell on Mobile, left and right.  **Feature Coming Soon**
