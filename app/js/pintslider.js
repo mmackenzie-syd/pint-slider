@@ -131,6 +131,7 @@
         buildDots(carContainer, numOfDots);
         if (options.dots === true) {
             for (t = 0; t < numOfDots; t += 1) {
+                var c = this.carouselOuter;
                 td = this.carouselOuter.querySelectorAll('.ps__carousel__outer__dot')[t];
                 (function (tdr) {
                     td.addEventListener('click', function () {
@@ -148,6 +149,13 @@
                             carouselMove("left", slidesToMove, options.appendTo, options.cellsToShow, options.transitionSpeed, options.slidesPerClick);
                         } else if (oldDotIndex < clickedDotIndex) {
                             carouselMove("right", slidesToMove, options.appendTo, options.cellsToShow, options.transitionSpeed, options.slidesPerClick);
+                        }
+                        if (clickedDotIndex == 0) {
+                            checkArrows(c, "left");
+                        } else if (clickedDotIndex == (c.querySelectorAll('.ps__carousel__outer__dot').length - 1)) {
+                            checkArrows(c, "right");    
+                       } else {
+                            checkArrows(c, "neutral");           
                         }
                     });
                 }(td));
