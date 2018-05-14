@@ -111,10 +111,12 @@
     background-repeat: no-repeat;
     background-position: center center;
     cursor: pointer;
+    transition: opacity .6s;
     z-index: 10;
 }
 .ps__carousel__mobile__touch .ps__carousel__arrow {
     display: none;
+    
 }
 .ps__carousel__left__arrow {
     left: 0;
@@ -123,6 +125,9 @@
 .ps__carousel__right__arrow {
     right: 0;
     background-image: url('https://www.bodybuilding.com/images/lpimages/optimization/next.png');
+}
+.ps__carousel__arrow__faded {
+    opacity: 0.2;
 }
 .ps__carousel__dots {
     width: 100%;
@@ -229,15 +234,24 @@
     padding-bottom: 12px !important;
 }
 .ps__carousel__inner .product__img-wrapper {
-  position: relative !important;
-  width: 100% !important;
-  height: 140px !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 140px !important;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    justify-content: center;
 }
-.ps__carousel__inner .product__img-wrapper img {
-  max-height: 114px !important;
-  max-width: 86px !important;
-  margin: 10px auto 0 !important;
-    display: block !important;
+.product__img {
+    max-height: 114px !important;
+    max-width: 86px !important;
+    margin: 10px auto 0 !important;
+    display: block !imvportant;
+}
+.ps__carousel--loose--images {
+    max-height: 82% !important;
+    max-width: 85% !important;
 }
 .ps__carousel__inner .product::before {
   display: none !important;

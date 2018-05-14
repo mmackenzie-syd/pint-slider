@@ -6,23 +6,9 @@
             actualWidth = element.clientWidth - padding;
         return actualWidth / cells;
     }
-    function checkArrows(el, direction, type) {
-        var leftArrow = el.querySelector('.ps__carousel__left__arrow'),
-            rightArrow = el.querySelector('.ps__carousel__right__arrow');
-        if (direction === "left") {   
-            leftArrow.classList.add('ps__carousel__arrow__faded');
-            rightArrow.classList.remove('ps__carousel__arrow__faded');
-        } else if (direction === "right") {
-            leftArrow.classList.remove('ps__carousel__arrow__faded');
-            rightArrow.classList.add('ps__carousel__arrow__faded');
-        } else if (direction === "neutral") {
-            leftArrow.classList.remove('ps__carousel__arrow__faded');
-            rightArrow.classList.remove('ps__carousel__arrow__faded');
-        }
-    }
     function buildDots(container, numOfDots) {
-        var containerDots = document.createElement('div');
         container.style.padding = "0 0 20px";
+        var containerDots = document.createElement('div');
         containerDots.classList.add('ps__carousel__dots');
         container.appendChild(containerDots);
         for (i = 0; i < numOfDots; i += 1) {
@@ -46,27 +32,15 @@
                 break;
             }
         }
-        var curr = car.querySelectorAll('.ps__carousel__inner__dot').length;
         if (arrows === "left") {
             if (typeof car.querySelectorAll('.ps__carousel__inner__dot')[oldDotIndex + -1] !== 'undefined') {
                 car.querySelectorAll('.ps__carousel__inner__dot')[oldDotIndex + -1].classList.add('ps__carousel__inner__dot--selected');
                 car.querySelectorAll('.ps__carousel__inner__dot')[oldDotIndex].classList.remove('ps__carousel__inner__dot--selected');
-                if (oldDotIndex <= 1) {
-                    checkArrows(car, "left", "arrow");
-                } else {
-                    checkArrows(car, "neutral");
-                }
             }
         } else if (arrows === "right") {
             if (typeof car.querySelectorAll('.ps__carousel__inner__dot')[oldDotIndex + 1] !== 'undefined') {
                 car.querySelectorAll('.ps__carousel__inner__dot')[oldDotIndex + 1].classList.add('ps__carousel__inner__dot--selected');
                 car.querySelectorAll('.ps__carousel__inner__dot')[oldDotIndex].classList.remove('ps__carousel__inner__dot--selected');
-                if (oldDotIndex === curr - 2) {
-                    checkArrows(car, "right", "arrow");
-                } else {
-                    checkArrows(car, "neutral");
-                }
-                
             }
         } else {
             car.querySelectorAll('.ps__carousel__inner__dot')[oldDotIndex].classList.remove('ps__carousel__inner__dot--selected');
@@ -99,9 +73,7 @@
             td,
             t,
             d,
-            cellWidth = (100 / options.cellsToShow) + "%",
-            leftArrow = document.createElement('div'),
-            rightArrow = document.createElement('div');
+            cellWidth = (100 / options.cellsToShow) + "%";
         this.carouselOuter = document.createElement('div');
         this.carouselOuter.classList.add('ps__carousel__outer');
         this.carouselOuter.style.maxWidth = options.maxWidth;
@@ -109,6 +81,8 @@
         element.classList.add('ps__carousel-fade');
         element.parentNode.appendChild(this.carouselOuter);
         carContainer = element.parentNode.querySelector('.ps__carousel__outer');
+        var leftArrow = document.createElement('div'),
+            rightArrow = document.createElement('div');
         leftArrow.classList.add('ps__carousel__arrow');
         leftArrow.classList.add('ps__carousel__left__arrow');
         rightArrow.classList.add('ps__carousel__arrow');
@@ -123,10 +97,6 @@
         for (i = 0; i < cells.length; i += 1) {
             cells[i].style.width = cellWidth;
             cells[i].style.minWidth = cellWidth;
-            cells[i].classList.add('ps__carousel__inner__cell');
-            if (options.images === "loose" && cells[i].querySelector('.product__img-wrapper')) {
-                cells[i].querySelector('.product__img-wrapper').getElementsByTagName('img')[0].classList.add('ps__carousel--loose--images');
-            }
         }
         buildDots(carContainer, numOfDots);
         if (options.dots === true) {
@@ -144,15 +114,14 @@
                         var clickedDotIndex = tdr.getAttribute('data-dot-number'),
                             slidesToMove = Math.abs(oldDotIndex - clickedDotIndex);
                         dotsChoose(false, options.appendTo, clickedDotIndex);
-                        if (oldDotIndex > clickedDotIndex) {
+                        if (oldDotIndex >= clickedDotIndex) {
                             carouselMove("left", slidesToMove, options.appendTo, options.cellsToShow, options.transitionSpeed, options.slidesPerClick);
                         } else if (oldDotIndex < clickedDotIndex) {
                             carouselMove("right", slidesToMove, options.appendTo, options.cellsToShow, options.transitionSpeed, options.slidesPerClick);
                         }
                     });
-                }(td));
+                })(td);
             }
-            this.carouselOuter.querySelector('.ps__carousel__left__arrow').classList.add('ps__carousel__arrow__faded');
         } else {
             element.parentElement.querySelector('.ps__carousel__dots').style.display = 'none';
         }
@@ -160,11 +129,16 @@
             element.classList.remove('ps__carousel-fade');
         }, 350);
     }
+    function destroy() {
+        document.querySelector(this.options.appendTo).parentElement.outerHTML = "";
+    }
     function mobileChange(mediaQuery, append) {
         var appendHere = document.querySelector(append);
-        if (mediaQuery.matches) { // window width is at least as large as mobile change
+        if (mediaQuery.matches) {
+          // window width is at least as large as mobile change
             appendHere.parentElement.classList.remove('ps__carousel__mobile__touch');
-        } else { // window width is less than mobile change
+        } else {
+          // window width is less than mobile change
             appendHere.parentElement.classList.add('ps__carousel__mobile__touch');
         }
     }
@@ -208,14 +182,13 @@
         this.cellsToShow = null;
         this.desktopPadding = null;
         this.dots = null;
-        this.fadeIn = null;
-        this.images = null;
         this.maxWidth = null;
         this.mobile = null;
         this.mobileAt = null;
         this.mobilePadding = null;
         this.slidesPerClick = null;
         this.transitionSpeed = null;
+        this.fadeIn = null;
         this.responsive = null;
         var defaults = { //Default Options
             appendTo: ".js__carousel__append",
@@ -224,9 +197,8 @@
             cellClass: ".product",
             cellsToShow: 5,
             desktopPadding: 15,
-            dots: true,
+            dots: false,
             fadeIn: true,
-            images: "restrict",
             maxWidth: "100%",
             mobile: "touch",
             mobileAt: "1000px",
@@ -243,15 +215,13 @@
             }
             return source;
         }
-        if (arguments[0]) {
-            if (typeof arguments[0] === "object") {
-                this.options = extendDefaults(defaults, arguments[0]);
-            }
+        if (arguments[0] && typeof arguments[0] === "object") {
+            this.options = extendDefaults(defaults, arguments[0]);
         }
         buildCarousel.call(this); //Build Carousel
         initializeType.call(this); //Initialize Click Events
     };
     Carousel.prototype.destroy = function () {
-        document.querySelector(this.options.appendTo).parentElement.outerHTML = "";
+        destroy.call(this);
     };
 }());
