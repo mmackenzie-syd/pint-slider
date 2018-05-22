@@ -66,6 +66,7 @@ Options | Default | Description
 appendTo: | ".js-carousel-append" | Name of the carousel container that contains the elements to be pint-sliderded.
 arrows: | true | Should carousel have arrows?
 autoplay: | false | Automatically have the slides move each X seconds. **Feature Coming Soon**
+brand: | "above" | Can also be "below". Puts the Brand Name above or below the Product Name.
 cellClass: | ".product" | Class name of the 'cells' inside your container, if they are targeters then default is fine.
 cellsToShow: | 5 | How many cells should show per slide?
 desktopPadding: | 15 | Padding for each cell on Desktop, left and right.  **Feature Coming Soon**
@@ -75,8 +76,11 @@ images: | "restrict" | Can be set to "loose" in order for product image to fill 
 mobile: | "touch" | In future will add option here to have arrows instead of "touch", doesn't need to be set now. **Feature Coming Soon**
 mobileAt: | "1000px" | Where should carousel switch to swipe friendly carousel?
 mobilePadding: | 5 | Padding for each cell on Mobile, left and right.  **Feature Coming Soon**
+oneLineName: | false | Set to true to restrict product name to one line and no line wrap
+price: | false | Set to true to show pricing of products from bbcom targeters
 slidesPerClick: | 5 | How many slides should carousel move per click on nav buttons?
 transitionSpeed: | 300 | How fast should the slides be? In Milliseconds.
+vios: | false | Set to true if targeters are being used and the carousel should add height for violator tags that dont exist (for consistency)
 
 ### After Initialization Options
 
