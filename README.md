@@ -1,6 +1,8 @@
 # Pint Slider
 
-##### Fully customizable carousel for use anywhere on Bodybuilding.com.
+#### Fully customizable carousel for use anywhere on Bodybuilding.com.
+<br />
+ Carousel plugin made completely with vanilla JavaScript, so it does not rely on any external libraries like jQuery. 
 <br />
 
 ![Pint Slider Example](/app/pint-slider-carousel.png)
