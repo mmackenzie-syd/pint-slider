@@ -1,8 +1,10 @@
 # Pint Slider
 
-##### Smallest damn carousel Bodybuilding.com has ever seen.
+##### Fully customizable carousel for use anywhere on Bodybuilding.com.
 <br />
 
+![Pint Slider Example](/app/pint-slider-carousel.png)
+<br />
 ## Features
 
 * Choose container to append new carousel to
